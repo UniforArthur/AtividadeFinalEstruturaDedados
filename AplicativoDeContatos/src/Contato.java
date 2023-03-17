@@ -56,8 +56,8 @@ public class Contato {
 
     @Override
     public String toString() {
-        return "Contato [nome=" + nome + ", telefone=" + telefone + ", dataDeNascimento=" + dataDeNascimento
-                + ", email=" + email + ", celular=" + celular + "]";
+        return "\n(Nome: " + nome + ", Telefone: " + telefone + ", Data de nascimento: " + dataDeNascimento
+                + ", e-mail: " + email + ", Celular: " + celular + ");";
     }
 
     

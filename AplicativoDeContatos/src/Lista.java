@@ -7,7 +7,7 @@ public class Lista {
         No novoNo = new No();
 
         novoNo.setContato(contato);
-        novoNo.setAnterior(inicio);
+        novoNo.setProximo(inicio);
         setInicio(novoNo);
         tamanho++;
     }
@@ -32,10 +32,10 @@ public class Lista {
     public String toString() {
 
         No noS = getInicio();
-        String saida = null;
+        String saida = "";
 
         while (noS != null) {
-            saida = noS.getContato() + "";
+            saida += noS.getContato() + "";
             noS = noS.getProximo();
         }
 

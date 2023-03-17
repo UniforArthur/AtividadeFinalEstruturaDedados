@@ -20,8 +20,8 @@ public class Hash {
     public String toString() {
 
         String saida = "";
+        
         for(int i = 0 ; i < operador; i++ ) {
-            
             saida += i + ": ";
             saida += lista[i % operador] + "\n";
         }
