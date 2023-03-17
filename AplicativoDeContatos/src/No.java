@@ -1,39 +1,39 @@
 public class No {
     
-    private int dado;
-    private int proximo;
-    private int anterior;
+    private Contato contato;
+    private No proximo;
+    private No anterior;
 
     No(){
     }
 
-    No(int dado, int proximo, int anterior) {
-        setDado(dado);
+    No(Contato dado, No proximo, No anterior) {
+        setContato(dado);
         setAnterior(anterior);
         setProximo(proximo);
     }
 
-    public int getDado() {
-        return dado;
+    public Contato getContato() {
+        return contato;
     }
 
-    public void setDado(int dado) {
-        this.dado = dado;
+    public void setContato(Contato contato) {
+        this.contato = contato;
     }
 
-    public int getProximo() {
+    public No getProximo() {
         return proximo;
     }
 
-    public void setProximo(int proximo) {
+    public void setProximo(No proximo) {
         this.proximo = proximo;
     }
 
-    public int getAnterior() {
+    public No getAnterior() {
         return anterior;
     }
 
-    public void setAnterior(int anterior) {
+    public void setAnterior(No anterior) {
         this.anterior = anterior;
     }
 }
