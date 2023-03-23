@@ -11,6 +11,11 @@ public class Lista {
             inicio = novoNo;
             fim = inicio;
         }
+        else if (tamanho == 1){
+            inicio.setProximo(novoNo);
+            novoNo.setAnterior(inicio);
+            fim = novoNo;
+        }
         else {
             fim.setProximo(novoNo);
             fim.setAnterior(fim);
@@ -31,19 +36,21 @@ public class Lista {
         }
 
         No noTemp = inicio;
+        int contador = 1;
         
         while(noTemp.getProximo() != null) {            
             if(noTemp.getContato().getNome().equals(nome)){
-                System.out.println("contato encontrado no while");
+                System.out.println("Contato encontrado na posição: " + contador);
                 break;
             }
             else {
-                noTemp = noTemp.getAnterior();
+                noTemp = noTemp.getProximo();
             }
+            contador++;
         }
 
-        if(noTemp.getContato().getNome().equals(nome) && noTemp.getAnterior() == null) {
-            System.out.println("contato encontrado:");
+        if(noTemp.getContato().getNome().equals(nome) && noTemp.getProximo() == null) {
+            System.out.println("Contato encontrado na posição: " + contador);
         }
         else if(noTemp.getContato().getNome() != nome) {
             System.out.println("contato nao cadatrado");
