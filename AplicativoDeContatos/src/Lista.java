@@ -52,7 +52,7 @@ public class Lista {
         if(noTemp.getContato().getNome().equals(nome) && noTemp.getProximo() == null) {
             System.out.println("Contato encontrado na posição: " + contador);
         }
-        else if(noTemp.getContato().getNome() != nome) {
+        else {
             System.out.println("contato nao cadatrado");
         }
     }
