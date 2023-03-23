@@ -5,7 +5,7 @@ public class Agenda {
     Scanner scan = new Scanner(System.in);
     boolean proximaInteracao = true;
 
-    int operador = 3;
+    int operador = 4;
     Hash hash = new Hash(operador);
 
     public void menuAgenda(){
@@ -53,14 +53,19 @@ public class Agenda {
 
                 hash.adicionar(new Contato(nome,telefone,dataNascimento,email,celular)); 
                 break;
-            case 2: 
-                System.out.println("Consultando um contato pelo nome");
+            case 2:
+                System.out.println("Informe o nome que deseja consultar");
+                String resposta = scan.next();
+                hash.consultar(resposta);
                 break;
             case 3:
                 System.out.println("Exluindo um contato");
                 break;
             case 4: 
                 proximaInteracao = false;
+                break;
+            case 5:
+                System.out.println(hash);
                 break;
             default: 
                 System.out.println("a opção selecionada não faz parte do menu");

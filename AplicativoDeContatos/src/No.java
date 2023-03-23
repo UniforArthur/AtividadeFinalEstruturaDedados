@@ -8,9 +8,9 @@ public class No {
     }
 
     No(Contato dado, No proximo, No anterior) {
-        setContato(dado);
-        setAnterior(anterior);
-        setProximo(proximo);
+        this.contato = dado;
+        this.anterior = anterior;
+        this.proximo = proximo;
     }
 
     public Contato getContato() {
@@ -36,4 +36,10 @@ public class No {
     public void setAnterior(No anterior) {
         this.anterior = anterior;
     }
+
+    public String toString() {
+        return "[contato=" + contato.getNome() + ", proximo=" + proximo + ", anterior=" + anterior + "]";
+    }    
+
+    
 }
