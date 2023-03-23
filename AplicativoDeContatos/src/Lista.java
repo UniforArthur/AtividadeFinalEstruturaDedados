@@ -21,9 +21,6 @@ public class Lista {
             fim.setAnterior(fim);
             fim = novoNo;
         }
-        // novoNo.setContato(contato);
-        // novoNo.setAnterior(inicio);
-        // setInicio(novoNo);
         tamanho++;
     }
 
