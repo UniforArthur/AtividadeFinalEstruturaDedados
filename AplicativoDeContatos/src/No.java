@@ -37,9 +37,11 @@ public class No {
         this.anterior = anterior;
     }
 
+    // public String toString() {
+    //     return "[contato=" + contato.getNome() + ", proximo=" + proximo + ", anterior=" + anterior + "]";
+    // }    
     public String toString() {
-        return "[contato=" + contato.getNome() + ", proximo=" + proximo + ", anterior=" + anterior + "]";
-    }    
-
+            return contato.toString();
+        }    
     
 }

@@ -24,8 +24,39 @@ public class Lista {
         tamanho++;
     }
 
+    public void excluirContato(String nome, int chave){
 
-    public void consultarContato(String nome) {
+        No noTemp = inicio;
+
+        while (noTemp != null){
+            if(noTemp.getContato().getNome().toUpperCase().equals(nome.toUpperCase())){
+
+                if(noTemp.getAnterior() == null) {
+                    inicio = noTemp.getProximo();
+                    return;
+                }
+                else {
+                    if(noTemp.getProximo() == null) {
+                        noTemp.getAnterior().setProximo(null);
+                        return;
+                    }
+                    else {
+                    
+                    No excluir = noTemp;
+                    noTemp = noTemp.getAnterior();
+                    noTemp.setProximo(excluir.getProximo());
+                    excluir.getProximo().setAnterior(noTemp);
+                    }
+
+                }
+                
+            }
+            else noTemp = noTemp.getProximo();
+        }
+        System.out.println("O nome indicado não está na lista ");
+    }
+
+    public void consultarContato(String nome, int chave) {
 
         if(this.tamanho == 0) {
             System.out.println("lista vazia");
@@ -34,21 +65,12 @@ public class Lista {
 
         No noTemp = inicio;
         int contador = 1;
-        
-        // while(noTemp.getProximo() != null) {                             IMPLEMENTAÇÃO ANTIGA
-        //     if(noTemp.getContato().getNome().equals(nome)){
-        //         System.out.println("Contato encontrado na posição: " + contador);
-        //         break;
-        //     }
-        //     else {
-        //         noTemp = noTemp.getProximo();
-        //     }
-        //     contador++;
-        // }
 
         while(noTemp != null) {            
             if(noTemp.getContato().getNome().toUpperCase().equals(nome.toUpperCase())){
-                System.out.println("Contato encontrado na posição: " + contador);
+                System.out.println("Contato Encontrado! \n");
+                System.out.println("Contato: " + noTemp + "\nEncontrado no vetor["+ chave +
+                "]" + " na posicao: " + contador);
                 return;
             }
                 noTemp = noTemp.getProximo();
@@ -57,15 +79,9 @@ public class Lista {
         }
         
         if  (noTemp == null) {
-            System.out.println("contato nao cadatrado");
+            System.out.println("contato nao cadastrado");
         }
 
-        // if(noTemp.getContato().getNome().equals(nome) && noTemp.getProximo() == null) {      IMPLEMENTAÇAO ANTIGA
-        //     System.out.println("Contato encontrado na posição: " + contador);
-        // }
-        // else {
-            // System.out.println("contato nao cadatrado");
-        // }
     }
 
     public No getInicio() {

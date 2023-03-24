@@ -1,12 +1,15 @@
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class Contato {
     
     private String nome;
-    private int telefone;
-    private String dataDeNascimento;
+    private long telefone;
+    private Date dataDeNascimento;
     private String email;
-    private int celular;
+    private long celular;
 
-    Contato(String nome, int telefone, String dataDeNascimento, String email, int celular) {
+    Contato(String nome, long telefone, Date dataDeNascimento, String email, long celular) {
         setNome(nome);
         setTelefone(telefone);
         setDataDeNascimento(dataDeNascimento);
@@ -22,20 +25,20 @@ public class Contato {
         this.nome = nome;
     }
 
-    public int getTelefone() {
+    public long getTelefone() {
         return telefone;
     }
 
-    public void setTelefone(int telefone) {
+    public void setTelefone(long telefone) {
         this.telefone = telefone;
     }
 
-    public String getDataDeNascimento() {
+    public Date getDataDeNascimento() {
         return dataDeNascimento;
     }
 
-    public void setDataDeNascimento(String dataDeNascimento) {
-        this.dataDeNascimento = dataDeNascimento;
+    public void setDataDeNascimento(Date dataDeNascimento2) {
+        this.dataDeNascimento = dataDeNascimento2;
     }
 
     public String getEmail() {
@@ -46,19 +49,19 @@ public class Contato {
         this.email = email;
     }
 
-    public int getCelular() {
+    public long getCelular() {
         return celular;
     }
 
-    public void setCelular(int celular) {
-        this.celular = celular;
+    public void setCelular(long celular2) {
+        this.celular = celular2;
     }
 
     @Override
     public String toString() {
-        return "\n(Nome: " + nome + ", Telefone: " + telefone + ", Data de nascimento: " + dataDeNascimento
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+        return "\n(Nome: " + nome + ", Telefone: " + telefone + ", Data de nascimento: " + sdf.format(dataDeNascimento)
                 + ", e-mail: " + email + ", Celular: " + celular + ");";
     }
-
-    
+   
 }

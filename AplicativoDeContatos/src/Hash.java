@@ -13,17 +13,28 @@ public class Hash {
     }
 
     public void adicionar(Contato contato) {
-        char nome = contato.getNome().toUpperCase().charAt(0);
-        int chave = nome % operador;
+        int chave = getChave(contato);
         lista[chave].adicionarContato(contato);
     }
 
     public void consultar(String nome) {
         char incialNome =  nome.toUpperCase().charAt(0);
         int chave = incialNome % operador;
-        lista[chave].consultarContato(nome);
+        lista[chave].consultarContato(nome, chave);
     }
-    
+
+
+    public void excluir(String nome){
+        char incialNome =  nome.toUpperCase().charAt(0);
+        int chave = incialNome % operador;
+        lista[chave].excluirContato(nome, chave);
+    }
+
+
+    public int getChave(Contato contato){
+        char nome = contato.getNome().toUpperCase().charAt(0);
+        return nome % operador;
+    }
 
     public String toString() {
 
