@@ -35,23 +35,37 @@ public class Lista {
         No noTemp = inicio;
         int contador = 1;
         
-        while(noTemp.getProximo() != null) {            
-            if(noTemp.getContato().getNome().equals(nome)){
+        // while(noTemp.getProximo() != null) {                             IMPLEMENTAÇÃO ANTIGA
+        //     if(noTemp.getContato().getNome().equals(nome)){
+        //         System.out.println("Contato encontrado na posição: " + contador);
+        //         break;
+        //     }
+        //     else {
+        //         noTemp = noTemp.getProximo();
+        //     }
+        //     contador++;
+        // }
+
+        while(noTemp != null) {            
+            if(noTemp.getContato().getNome().toUpperCase().equals(nome.toUpperCase())){
                 System.out.println("Contato encontrado na posição: " + contador);
-                break;
+                return;
             }
-            else {
                 noTemp = noTemp.getProximo();
-            }
+            
             contador++;
         }
-
-        if(noTemp.getContato().getNome().equals(nome) && noTemp.getProximo() == null) {
-            System.out.println("Contato encontrado na posição: " + contador);
-        }
-        else {
+        
+        if  (noTemp == null) {
             System.out.println("contato nao cadatrado");
         }
+
+        // if(noTemp.getContato().getNome().equals(nome) && noTemp.getProximo() == null) {      IMPLEMENTAÇAO ANTIGA
+        //     System.out.println("Contato encontrado na posição: " + contador);
+        // }
+        // else {
+            // System.out.println("contato nao cadatrado");
+        // }
     }
 
     public No getInicio() {
