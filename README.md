@@ -1,5 +1,4 @@
-# Atividade Final 
-## Estrutura de Dados
+# Atividade Final - Estrutura de Dados
 
 ### Equipe composta por:
 
