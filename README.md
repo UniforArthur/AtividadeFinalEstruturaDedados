@@ -3,9 +3,9 @@
 
 Equipe composta por:
 
-Arthur Rocha Araujo Moraes;
-Mateus Pires de Castro Graddvohl;
-Rafael Lima de Freitas guimarães
+- Arthur Rocha Araujo Moraes;
+- Mateus Pires de Castro Graddvohl;
+- Rafael Lima de Freitas guimarães
 
 
 ## Proposta:
